@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: br.gov.sp.fatec.projetospring20231.ProjetoSpring20231ApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.522 s - in br.gov.sp.fatec.projetospring20231.ProjetoSpring20231ApplicationTests
