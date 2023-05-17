@@ -1,6 +1,7 @@
 package br.gov.sp.fatec.projetospring20231.controller;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,30 +11,28 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.gov.sp.fatec.projetospring20231.entity.Usuario;
-import br.gov.sp.fatec.projetospring20231.service.InterfaceUsuarioService;
+import br.gov.sp.fatec.projetospring20231.entity.UsuarioEntity;
+import br.gov.sp.fatec.projetospring20231.service.IUsuarioService;
 
 @RestController
 @CrossOrigin
 @RequestMapping(value = "/usuario")
 public class UsuarioController {
-    
     @Autowired
-    private InterfaceUsuarioService service;
+    private IUsuarioService service;
 
     @GetMapping
-    public List<Usuario> buscarTodos() {
+    public List<UsuarioEntity> buscarTodos() {
         return service.buscarTodos();
     }
 
     @GetMapping(value = "/id/{usuario}")
-    public Usuario buscarPorId(@PathVariable("usuario") Long id) {
+    public UsuarioEntity buscarPorId(@PathVariable ("usuario") Long id) {
         return service.buscarPorId(id);
     }
 
     @PostMapping
-    public Usuario novoUsuario(@RequestBody Usuario usuario) {
+    public UsuarioEntity novoUsuario(@RequestBody UsuarioEntity usuario) {
         return service.novoUsuario(usuario);
     }
-
 }
